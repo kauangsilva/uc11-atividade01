@@ -1,3 +1,6 @@
+
+import javax.swing.JTextField;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -141,8 +144,8 @@ public class cadastroVIEW extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         ProdutosDTO produto = new ProdutosDTO();
-        String nome = cadastroNome.getText();
-        String valor = cadastroValor.getText();
+        String nome = getCadastroNome().getText();
+        String valor = getCadastroValor().getText();
         String status = "A Venda";
         produto.setNome(nome);
         produto.setValor(Integer.parseInt(valor));
@@ -191,6 +194,22 @@ public class cadastroVIEW extends javax.swing.JFrame {
                 new cadastroVIEW().setVisible(true);
             }
         });
+    }
+
+    public JTextField getCadastroNome() {
+        return cadastroNome;
+    }
+
+    public void setCadastroNome(JTextField cadastroNome) {
+        this.cadastroNome = cadastroNome;
+    }
+
+    public JTextField getCadastroValor() {
+        return cadastroValor;
+    }
+
+    public void setCadastroValor(JTextField cadastroValor) {
+        this.cadastroValor = cadastroValor;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
