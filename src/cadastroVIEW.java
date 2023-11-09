@@ -11,12 +11,15 @@ import javax.swing.JTextField;
  * @author Adm
  */
 public class cadastroVIEW extends javax.swing.JFrame {
+    private final ControladorCadastroVIEW controlador;
 
     /**
      * Creates new form cadastroVIEW
      */
     public cadastroVIEW() {
         initComponents();
+        
+        controlador = new ControladorCadastroVIEW(this);
     }
 
     /**
@@ -143,7 +146,9 @@ public class cadastroVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroNomeActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        ProdutosDTO produto = new ProdutosDTO();
+       controlador.inserirProdutoNoBanco();
+        
+        /* ProdutosDTO produto = new ProdutosDTO();
         String nome = getCadastroNome().getText();
         String valor = getCadastroValor().getText();
         String status = "A Venda";
@@ -152,7 +157,7 @@ public class cadastroVIEW extends javax.swing.JFrame {
         produto.setStatus(status);
         
         ProdutosDAO produtodao = new ProdutosDAO();
-        produtodao.cadastrarProduto(produto);
+        produtodao.cadastrarProduto(produto);*/
         
     }//GEN-LAST:event_btnCadastrarActionPerformed
 

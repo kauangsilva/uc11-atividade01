@@ -10,17 +10,17 @@
 public class ProdutosDTO {
     private Integer id;
     private String nome;
-    private Integer valor;
+    private String valor;
     private String status;
 
-    public ProdutosDTO(Integer id, String nome, Integer valor, String status) {
+    public ProdutosDTO(Integer id, String nome, String valor, String status) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
         this.status = status;
     }
 
-    public ProdutosDTO(String nome, Integer valor, String status) {
+    public ProdutosDTO(String nome, String valor, String status) {
         this.nome = nome;
         this.valor = valor;
         this.status = status;
@@ -40,7 +40,7 @@ public class ProdutosDTO {
         return nome;
     }
 
-    public Integer getValor() {
+    public String getValor() {
         return valor;
     }
 
@@ -56,7 +56,7 @@ public class ProdutosDTO {
         this.nome = nome;
     }
 
-    public void setValor(Integer valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 
