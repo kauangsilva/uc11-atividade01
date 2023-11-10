@@ -61,5 +61,20 @@ public class ProdutosDAO {
         return produtos;
 
     }
+    
+    public void atualizarProduto(Connection conexao, ProdutosDTO produto){
+        try {
+            String sql = "update produtos set status = ? where id = ?;";
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.setString(1,produto.getStatus());
+            ps.setInt(2,produto.getId());
+            ps.execute();
+            conexao.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutosDAO.class.getName()).log(Level.SEVERE, null, ex);
+               JOptionPane.showMessageDialog(null, "Falha no sql!");
+        }
+       
+    }
 
 }

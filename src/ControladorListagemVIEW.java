@@ -64,5 +64,21 @@ public class ControladorListagemVIEW {
         visao.getListaProdutos().setModel(modeloTabela);
         
     }
+    
+    public void venderProduto(){
+        
+        String status = "vendido";
+        String id = visao.getId_produto_venda().getText();
+        int idInt = Integer.valueOf(id);
+        ProdutosDTO produto = new ProdutosDTO(idInt,status);
+        
+        Connection conexao = this.criaConexaoComBancoDados();
+        
+        ProdutosDAO produtosDAO  = new  ProdutosDAO(conexao);
+        
+        produtosDAO.atualizarProduto(conexao, produto);
+        
+        
+    }
 
 }

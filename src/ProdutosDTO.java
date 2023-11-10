@@ -26,6 +26,17 @@ public class ProdutosDTO {
         this.status = status;
     }
 
+    public ProdutosDTO(String status) {
+        this.status = status;
+    }
+
+    public ProdutosDTO(Integer id, String status) {
+        this.id = id;
+        this.status = status;
+    }
+    
+    
+
     ProdutosDTO() {
 
     }

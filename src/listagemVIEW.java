@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import javax.swing.JTable;
+import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -140,7 +141,7 @@ private final ControladorListagemVIEW controlador;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
-    
+controlador.venderProduto();
     }//GEN-LAST:event_btnVenderActionPerformed
 
     private void btnVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendasActionPerformed
@@ -185,6 +186,14 @@ private final ControladorListagemVIEW controlador;
                 new listagemVIEW().setVisible(true);
             }
         });
+    }
+
+    public JTextPane getId_produto_venda() {
+        return id_produto_venda;
+    }
+
+    public void setId_produto_venda(JTextPane id_produto_venda) {
+        this.id_produto_venda = id_produto_venda;
     }
 
     public JTable getListaProdutos() {
