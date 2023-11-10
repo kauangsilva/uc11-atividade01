@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /*
@@ -12,12 +13,15 @@ import javax.swing.table.DefaultTableModel;
  * @author Adm
  */
 public class listagemVIEW extends javax.swing.JFrame {
-
+private final ControladorListagemVIEW controlador;
     /**
      * Creates new form listagemVIEW
      */
     public listagemVIEW() {
         initComponents();
+        
+        controlador = new ControladorListagemVIEW(this);
+        controlador.exibeModeloNaTabela();
       
     }
 
@@ -181,6 +185,14 @@ public class listagemVIEW extends javax.swing.JFrame {
                 new listagemVIEW().setVisible(true);
             }
         });
+    }
+
+    public JTable getListaProdutos() {
+        return listaProdutos;
+    }
+
+    public void setListaProdutos(JTable listaProdutos) {
+        this.listaProdutos = listaProdutos;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
