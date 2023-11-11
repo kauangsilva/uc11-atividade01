@@ -1,3 +1,6 @@
+
+import javax.swing.JTable;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -17,6 +20,7 @@ public class TelaVendas extends javax.swing.JFrame {
         initComponents();
         
         controlador = new ControladorTelaVendas(this);
+        controlador.exibeModeloNaTabela();
     }
 
     /**
@@ -57,10 +61,21 @@ public class TelaVendas extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, -1, 350));
 
         jButton1.setText("voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        listagemVIEW listagem = new listagemVIEW();
+        listagem.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,6 +110,14 @@ public class TelaVendas extends javax.swing.JFrame {
                 new TelaVendas().setVisible(true);
             }
         });
+    }
+
+    public JTable getjTable1_produtosVendidos() {
+        return jTable1_produtosVendidos;
+    }
+
+    public void setjTable1_produtosVendidos(JTable jTable1_produtosVendidos) {
+        this.jTable1_produtosVendidos = jTable1_produtosVendidos;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

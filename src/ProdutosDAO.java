@@ -61,20 +61,46 @@ public class ProdutosDAO {
         return produtos;
 
     }
-    
-    public void atualizarProduto(Connection conexao, ProdutosDTO produto){
+
+    public void atualizarProduto(Connection conexao, ProdutosDTO produto) {
         try {
             String sql = "update produtos set status = ? where id = ?;";
             PreparedStatement ps = conexao.prepareStatement(sql);
-            ps.setString(1,produto.getStatus());
-            ps.setInt(2,produto.getId());
+            ps.setString(1, produto.getStatus());
+            ps.setInt(2, produto.getId());
             ps.execute();
             conexao.close();
         } catch (SQLException ex) {
             Logger.getLogger(ProdutosDAO.class.getName()).log(Level.SEVERE, null, ex);
-               JOptionPane.showMessageDialog(null, "Falha no sql!");
+            JOptionPane.showMessageDialog(null, "Falha no sql!");
         }
-       
+
     }
 
+    public ArrayList<ProdutosDTO> listaTodosProdutosVendidos(Connection conexao) {
+        ArrayList<ProdutosDTO> produtosVendidos = new ArrayList<>();
+        String sql = "select * from produtos where status = 'vendido';";
+         
+        try {
+            PreparedStatement ps = conexao.prepareStatement(sql);
+            ps.execute();
+             ResultSet rs = ps.getResultSet();
+                while (rs.next()) {
+                // Extrair informações do ResultSet e criar objetos Produtos vendidos
+                int id = rs.getInt("id");
+                String nome = rs.getString("nome");
+                String valor = rs.getString("valor");
+                String status = rs.getString("status");
+                ProdutosDTO produtosDTO = new ProdutosDTO(id, nome, valor, status);
+                produtosVendidos.add(produtosDTO);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutosDAO.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Falha no sql!");
+        }
+       
+        return produtosVendidos;
+
+    }
 }
