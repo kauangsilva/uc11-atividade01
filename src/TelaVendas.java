@@ -8,7 +8,7 @@ import javax.swing.JTable;
 
 /**
  *
- * @author Lenovo
+ * @author Kauan
  */
 public class TelaVendas extends javax.swing.JFrame {
     private final ControladorTelaVendas controlador;

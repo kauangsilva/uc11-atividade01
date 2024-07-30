@@ -5,7 +5,7 @@
 
 /**
  *
- * @author Adm
+ * @author Kauan
  */
 public class ProdutosDTO {
     private Integer id;

@@ -44,7 +44,7 @@ public class ProdutosDAO {
             ps.execute();
             ResultSet rs = ps.getResultSet();
             while (rs.next()) {
-                // Extrair informações do ResultSet e criar objetos Produtos
+                
                 int id = rs.getInt("id");
                 String nome = rs.getString("nome");
                 String valor = rs.getString("valor");

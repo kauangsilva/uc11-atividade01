@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Adm
+ * @author Kauan
  */
 public class cadastroVIEW extends javax.swing.JFrame {
     private final ControladorCadastroVIEW controlador;

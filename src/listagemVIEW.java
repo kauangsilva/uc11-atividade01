@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Adm
+ * @author Kauan
  */
 public class listagemVIEW extends javax.swing.JFrame {
 private final ControladorListagemVIEW controlador;

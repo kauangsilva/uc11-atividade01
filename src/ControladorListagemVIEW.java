@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  */
 /**
  *
- * @author Lenovo
+ * @author Kauan
  */
 public class ControladorListagemVIEW {
 
